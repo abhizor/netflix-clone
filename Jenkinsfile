@@ -14,7 +14,7 @@ pipeline{
 
             stage('Deploy'){
                         steps{
-                            sh    'cd path/to/directory && docker-compose down'
+                            sh 'docker-compose down && docker-compose up -d'
 				
 			}
 	    }
