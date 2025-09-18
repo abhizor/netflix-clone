@@ -1,18 +1,18 @@
 pipeline{
-     Agent any
-     Stages{
-             Stage('code'){
+     agent any
+     stages{
+             stage('code'){
                      steps{
 		         git url: 'https://github.com/abhizor/netflix-clone.git' ,branch: 'main'
 		     }
 	     }
-            Stage('Build'){
+            stage('Build'){
                steps{   
 	                  Docker build . -t abhishar7225/netflix:latest
 	           }
 	    }
 
-            Stage('Deploy'){
+            stage('Deploy'){
                         steps{
                                 docker-compose down
 				docker-compoise up -d
