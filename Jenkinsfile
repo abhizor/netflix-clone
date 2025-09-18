@@ -8,7 +8,7 @@ pipeline{
 	     }
             stage('Build'){
                steps{   
-	                sh  'Docker build . -t abhishar7225/netflix:latest'
+	                sh  'docker build . -t abhishar7225/netflix:latest'
 	           }
 	    }
 
