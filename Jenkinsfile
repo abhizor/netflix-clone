@@ -8,14 +8,14 @@ pipeline{
 	     }
             stage('Build'){
                steps{   
-	                  Docker build . -t abhishar7225/netflix:latest
+	                sh  'Docker build . -t abhishar7225/netflix:latest'
 	           }
 	    }
 
             stage('Deploy'){
                         steps{
-                                docker-compose down
-				docker-compoise up -d
+                            sh    'docker-compose down'
+				            sh    'docker-compoise up -d'
 				
 			}
 	    }
