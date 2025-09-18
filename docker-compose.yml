@@ -1,7 +1,6 @@
-version: '3.9'
-services:
-  netfix_app:
-    image: abhishar7225/netflix:latest
-    ports:
-      - '8000:8000'
-
+FROM node:lts-alpine
+WORKDIR /app
+COPY . /app
+RUN npm install
+EXPOSE 3000
+CMD ["npm", "start"]
